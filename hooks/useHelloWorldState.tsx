@@ -24,6 +24,7 @@ const useHelloWorldState = () => {
       );
       if (isError) {
         toast.error("Error fetching contract state");
+        return;
       }
       return output;
     },
