@@ -4,17 +4,18 @@ import {
   contracts,
   SubstrateDeployment,
   UseInkathonProvider,
-  development,
 } from "@scio-labs/use-inkathon";
 
 import metadata from "@/artifacts/hello_world.json";
 import { Toaster } from "./ui/sonner";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+const queryClient = new QueryClient();
 
 const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
   async function getContract(): Promise<SubstrateDeployment[]> {
     return [
       {
-        contractId: "hello_world",
+        contractId: process.env.NEXT_PUBLIC_CONTRACT_ID as string,
         networkId: contracts.network,
         abi: metadata,
         address: process.env.NEXT_PUBLIC_CONTRACT_ADDRESS as string,
@@ -22,15 +23,17 @@ const AppProvider: React.FC<PropsWithChildren> = ({ children }) => {
     ];
   }
   return (
-    <UseInkathonProvider
-      appName="Hello World, ink!"
-      connectOnInit={true}
-      defaultChain={process.env.NEXT_PUBLIC_DEFAULT_CHAIN as string}
-      deployments={getContract()}
-    >
-      {children}
-      <Toaster />
-    </UseInkathonProvider>
+    <QueryClientProvider client={queryClient}>
+      <UseInkathonProvider
+        appName="Hello World, ink!"
+        connectOnInit={true}
+        defaultChain={process.env.NEXT_PUBLIC_DEFAULT_CHAIN as string}
+        deployments={getContract()}
+      >
+        {children}
+        <Toaster />
+      </UseInkathonProvider>
+    </QueryClientProvider>
   );
 };
 

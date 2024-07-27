@@ -1,3 +1,9 @@
+import HelloWorldState from "@/components/HelloWorldState";
+
 export default function Home() {
-  return <div>asdasd</div>;
+  return (
+    <>
+      <HelloWorldState />
+    </>
+  );
 }
