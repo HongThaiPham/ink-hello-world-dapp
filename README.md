@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Build a Hello World DApp and interact with it on Rococo Contract Testnet
 
-## Getting Started
+This tutorial will guide you through the process of building a simple Hello World DApp and deploying it on the Rococo Contract Testnet. You will also learn how to interact with the deployed DApp using the Polkadot.js Apps UI.
 
-First, run the development server:
+> Demo: [Hello World DApp](https://ink-hello-world-dapp.vercel.app)
+> Video demo: [YouTube](https://www.youtube.com/watch?v=NvE5zpNqncE)
+
+### How to build a Hello World DApp
+
+Clone the [Hello World DApp](https://github.com/HongThaiPham/ink-hello-world-dapp)
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/HongThaiPham/ink-hello-world-dapp
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Navigate to the project directory
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd ink-hello-world-dapp
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Install the dependencies
 
-## Learn More
+```bash
+pnpm install
+```
 
-To learn more about Next.js, take a look at the following resources:
+Run dapp in development mode
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```bash
+pnpm run dev
+```
